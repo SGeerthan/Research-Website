@@ -1,0 +1,125 @@
+.documents-page {
+    padding-top: 151px;
+    padding-bottom: 100px;
+}
+
+.docs-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+    margin-bottom: 4rem;
+}
+
+.doc-card {
+    padding: 2rem;
+    display: flex;
+    gap: 1.5rem;
+    transition: var(--transition);
+}
+
+.doc-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--primary-color);
+}
+
+.doc-icon {
+    position: relative;
+    width: 60px;
+    height: 60px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.doc-icon .icon {
+    font-size: 2rem;
+}
+
+.doc-type-tag {
+    position: absolute;
+    bottom: -5px;
+    right: -5px;
+    background: var(--surface-border);
+    font-size: 0.65rem;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-weight: 800;
+    color: var(--text-main);
+    border: 1px solid var(--glass-border);
+}
+
+.doc-info {
+    flex: 1;
+}
+
+.doc-category {
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--primary-color);
+    letter-spacing: 1px;
+}
+
+.doc-info h3 {
+    margin: 0.5rem 0;
+    font-size: 1.25rem;
+}
+
+.doc-info p {
+    color: var(--text-dim);
+    font-size: 0.9rem;
+    margin-bottom: 1.5rem;
+    line-height: 1.5;
+}
+
+.doc-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 1rem;
+    border-top: 1px solid var(--glass-border);
+}
+
+.doc-size {
+    font-size: 0.8rem;
+    color: var(--text-dim);
+}
+
+.download-link {
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: var(--primary-color);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.download-link .arrow {
+    transition: var(--transition);
+}
+
+.download-link:hover .arrow {
+    transform: translateX(5px);
+}
+
+.docs-note {
+    padding: 2rem;
+    text-align: center;
+    border-color: var(--secondary-color);
+}
+
+.docs-note code {
+    background: rgba(112, 0, 255, 0.1);
+    padding: 2px 6px;
+    border-radius: 4px;
+    color: var(--secondary-color);
+}
+
+@media (max-width: 480px) {
+    .doc-card {
+        flex-direction: column;
+    }
+}

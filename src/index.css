@@ -1,0 +1,157 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;600;800;900&display=swap');
+@import "tailwindcss";
+
+/* ============================================================
+   TRAFFIXION BRAND THEME
+   Logo palette:
+     Cream bg   : #FAF3E0
+     Dark brown : #3D2710
+     Teal green : #2E7D4F
+     Signal red : #E63946
+     Amber      : #F5A623
+     Light green: #27AE60
+   ============================================================ */
+@theme {
+  /* --- Background / Surface --- */
+  --color-bg-custom:       #FAF3E0;
+  --color-surface-custom:  #F5EDD6;
+  --color-surface-alt:     #EFE4C8;
+  --color-surface-border:  #D4C4A0;
+
+  /* --- Brand Colors --- */
+  --color-brown:           #3D2710;
+  --color-brown-light:     #5C3D1E;
+  --color-green:           #2E7D4F;
+  --color-green-light:     #27AE60;
+  --color-red-signal:      #E63946;
+  --color-amber:           #F5A623;
+
+  /* --- Primary / Secondary (mapped to brand) --- */
+  --color-primary-custom:   #2E7D4F;
+  --color-secondary-custom: #3D2710;
+
+  /* --- Text --- */
+  --color-text-main:       #3D2710;
+  --color-text-dim:        #7A5C3A;
+  --color-text-light:      #A08060;
+
+  /* --- Glass / Overlay --- */
+  --color-glass-bg:        rgba(250, 243, 224, 0.75);
+  --color-glass-border:    rgba(61, 39, 16, 0.15);
+
+  /* --- Fonts --- */
+  --font-inter:  'Inter', sans-serif;
+  --font-outfit: 'Outfit', sans-serif;
+
+  /* --- Shadows --- */
+  --shadow-glow-green:  0 0 20px rgba(46, 125, 79, 0.35);
+  --shadow-glow-brown:  0 0 20px rgba(61, 39, 16, 0.25);
+}
+
+@layer base {
+  :root {
+    --primary-glow:   rgba(46, 125, 79, 0.35);
+    --secondary-glow: rgba(61, 39, 16, 0.35);
+    --transition:     all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  body {
+    @apply bg-bg-custom text-text-main font-inter antialiased overflow-x-hidden;
+    line-height: 1.6;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-outfit font-extrabold tracking-tight text-brown;
+  }
+
+  a {
+    @apply transition-all duration-300;
+  }
+}
+
+@layer components {
+  /* Card with warm glass look */
+  .glass-card {
+    background: rgba(245, 237, 214, 0.8);
+    border: 1px solid rgba(61, 39, 16, 0.12);
+    @apply backdrop-blur-xl rounded-2xl;
+    box-shadow: 0 4px 24px rgba(61, 39, 16, 0.06);
+  }
+
+  .glass-card:hover {
+    border-color: rgba(46, 125, 79, 0.3);
+    box-shadow: 0 8px 32px rgba(46, 125, 79, 0.12);
+  }
+
+  /* Primary CTA button */
+  .glow-btn {
+    @apply px-8 py-3 rounded-full bg-green text-white font-semibold transition-all duration-300;
+    box-shadow: 0 4px 16px rgba(46, 125, 79, 0.35);
+  }
+
+  .glow-btn:hover {
+    @apply -translate-y-0.5;
+    box-shadow: 0 8px 24px rgba(46, 125, 79, 0.5);
+    background-color: #27AE60;
+  }
+
+  /* Secondary outlined button */
+  .outline-btn {
+    @apply px-8 py-3 rounded-full border-2 border-brown text-brown font-semibold transition-all duration-300;
+  }
+
+  .outline-btn:hover {
+    @apply bg-brown text-bg-custom -translate-y-0.5;
+  }
+
+  /* Gradient text using brand colors */
+  .text-gradient {
+    background: linear-gradient(135deg, #2E7D4F 0%, #3D2710 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Section padding — responsive */
+  .section-padding {
+    @apply py-16 px-4 sm:py-20 sm:px-6 md:py-24 md:px-12 lg:px-24;
+  }
+
+  /* Badge / pill */
+  .badge {
+    @apply inline-block px-3 py-1 rounded-full text-xs font-bold uppercase tracking-widest;
+  }
+
+  .badge-green {
+    @apply inline-block px-3 py-1 rounded-full text-xs font-bold uppercase tracking-widest bg-green/10 text-green;
+  }
+
+  .badge-brown {
+    @apply inline-block px-3 py-1 rounded-full text-xs font-bold uppercase tracking-widest bg-brown/10 text-brown;
+  }
+
+  .badge-amber {
+    @apply inline-block px-3 py-1 rounded-full text-xs font-bold uppercase tracking-widest bg-amber/10 text-amber;
+  }
+
+  /* Section header underline accent */
+  .section-title::after {
+    content: '';
+    display: block;
+    width: 64px;
+    height: 4px;
+    background: linear-gradient(90deg, #2E7D4F, #F5A623);
+    border-radius: 9999px;
+    margin: 12px auto 0;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: #FAF3E0; }
+::-webkit-scrollbar-thumb { background: #2E7D4F; border-radius: 9999px; }
+::-webkit-scrollbar-thumb:hover { background: #3D2710; }

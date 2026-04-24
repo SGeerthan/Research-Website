@@ -1,0 +1,40 @@
+.footer {
+    margin-top: 4rem;
+    padding: 4rem 2rem 2rem;
+    border-top: 1px solid var(--surface-border);
+    background: var(--surface-color);
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+}
+
+.footer-logo {
+    text-align: center;
+}
+
+.footer-logo .text-gradient {
+    font-size: 1.5rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.footer-logo p {
+    color: var(--text-dim);
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+}
+
+.footer-bottom {
+    padding-top: 2rem;
+    border-top: 1px solid var(--glass-border);
+    width: 100%;
+    text-align: center;
+    color: var(--text-dim);
+    font-size: 0.85rem;
+}
