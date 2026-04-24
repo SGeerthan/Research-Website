@@ -1,4 +1,5 @@
 import React from 'react';
+import images from '../assets/images/file'
 
 const staffMembers = [
     {
@@ -6,14 +7,16 @@ const staffMembers = [
         role: 'Project Supervisor',
         email: 'nuwan.k@sliit.lk',
         dept: 'Department of Computer Science and Software Engineering',
-        inst: 'Sri Lanka Institute of Information Technology'
+        inst: 'Sri Lanka Institute of Information Technology',
+        images: images.sir
     },
     {
         name: 'Karthiga Rajendran',
         role: 'Project Co-supervisor',
         email: 'karthiga.r@sliit.lk',
         dept: 'Department of Computer Science and Software Engineering',
-        inst: 'Sri Lanka Institute of Information Technology'
+        inst: 'Sri Lanka Institute of Information Technology',
+        images: images.maam
     }
 ];
 
@@ -23,36 +26,44 @@ const studentMembers = [
         role: 'Research Student',
         email: 'sangeesivananthan@gmail.com',
         dept: 'Department of Computer Science and Software Engineering',
-        inst: 'Sri Lanka Institute of Information Technology'
+        inst: 'Sri Lanka Institute of Information Technology',
+        images: images.sangs
     },
     {
         name: 'Fernandopulle S N',
         role: 'Research Student',
         email: 'snimashafernandopulle@gmail.com',
         dept: 'Department of Computer Science and Software Engineering',
-        inst: 'Sri Lanka Institute of Information Technology'
+        inst: 'Sri Lanka Institute of Information Technology',
+        images: images.nimasha
     },
     {
         name: 'Luvinson I',
         role: 'Research Student',
         email: 'luvinson777@gmail.com',
         dept: 'Department of Computer Science and Software Engineering',
-        inst: 'Sri Lanka Institute of Information Technology'
+        inst: 'Sri Lanka Institute of Information Technology',
+        images: images.luvinson
     },
     {
         name: 'Krushanth A',
         role: 'Research Student',
         email: 'krushanthamalanathan@gmail.com',
         dept: 'Department of Computer Science and Software Engineering',
-        inst: 'Sri Lanka Institute of Information Technology'
+        inst: 'Sri Lanka Institute of Information Technology',
+        images: images.krushanth
     },
 
 ];
 
 const MemberCard = ({ m }) => (
     <div className="glass-card p-6 text-center group hover:-translate-y-2 transition-all duration-500 flex flex-col items-center">
-        <div className="w-20 h-20 rounded-full bg-gradient-to-br from-surface-border to-bg-custom border-2 border-glass-border group-hover:border-primary-custom transition-colors duration-500 overflow-hidden mb-4 flex items-center justify-center text-3xl opacity-40">
-            👤
+        <div className="w-20 h-20 rounded-full bg-gradient-to-br from-surface-border to-bg-custom border-2 border-glass-border group-hover:border-primary-custom transition-colors duration-500 overflow-hidden mb-4 flex items-center justify-center text-3xl ">
+            <img 
+                src={m.images} 
+                alt={m.name} 
+                className="w-full h-full object-cover"
+            />
         </div>
         <h3 className="text-lg font-bold mb-1 text-brown">{m.name}</h3>
         <p className="badge-green mb-3">{m.role}</p>
