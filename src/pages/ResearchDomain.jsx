@@ -9,11 +9,11 @@ const ResearchDomain = () => {
             content: 'Traditional traffic signal control systems rely on pre-timed or fixed-cycle schedules, which fail to account for the dynamic nature of urban traffic. This leads to increased congestion, particularly during peak hours, and poses significant challenges for emergency services that require immediate right-of-way.'
         }, {
             title: 'Literature survey',
-            content: 'Traditional traffic signal control systems rely on pre-timed or fixed-cycle schedules, which fail to account for the dynamic nature of urban traffic. This leads to increased congestion, particularly during peak hours, and poses significant challenges for emergency services that require immediate right-of-way.'
+            content: 'Existing literature primarily focuses on single-intersection control and simulation-only reinforcement learning using isolated vehicle counts. Current studies lack real-world computer vision integration and fail to address coordinated multi-agent networks capable of simultaneously managing emergency preemption, transit priority, and pedestrian safety.'
         },
         {
             title: 'Research Gap',
-            content: 'While existing smart traffic systems show promise, there is a lack of integrated solutions that combine real-time emergency vehicle detection with multi-agent reinforcement learning for signal optimization. Current methods often prioritize individual intersections rather than optimizing the entire traffic network for emergency vehicle throughput.'
+            content: 'Current research lacks a unified framework integrating real-time computer vision with decentralized MARL. Crucially, existing methods fail to simultaneously optimize emergency vehicle preemption, public transit priority, and adaptive pedestrian safety across coordinated multi-intersection urban traffic networks.'
         },
         {
             title: 'Research Problem',
@@ -38,11 +38,28 @@ const ResearchDomain = () => {
         },
         {
             title: 'Research Objectives',
-            content: 'To develop an AI-powered traffic management framework that utilizes multimodal detection for real-time emergency vehicle prioritization. Objectives include reducing emergency response times by 30%, optimizing overall intersection throughput, and implementing a decentralized control system for scalable city-wide deployment.'
+            content:'The primary goal of this research is to create an intelligent traffic signal control system that uses Multi-Agent Reinforcement Learning (MARL) to dynamically optimize traffic flow depending on current conditions while maintaining efficiency and safety. By modeling each junction as an independent agent, the study especially aims to use a decentralized MARL framework to promote coordinated decision making. A priority-based traffic system that considers public transportation and provides guaranteeing effective and secure traveling for pedestrians. '
         },
         {
             title: 'Methodology',
-            content: 'To develop an AI-powered traffic management framework that utilizes multimodal detection for real-time emergency vehicle prioritization. Objectives include reducing emergency response times by 30%, optimizing overall intersection throughput, and implementing a decentralized control system for scalable city-wide deployment.'
+            content: (
+                <div className="space-y-6">
+                    <p>Current research lacks a unified framework integrating real-time computer vision with decentralized MARL. Crucially, existing methods fail to simultaneously optimize emergency vehicle preemption, public transit priority, and adaptive pedestrian safety across coordinated multi-intersection urban traffic networks.This stems from four major issues:</p>
+                    <div className="grid sm:grid-cols-2 gap-6 mt-4">
+                        {[
+                            { t: 'Traffic Congestion', d: 'Current traffic systems cannot adapt in real time, causing long delays and inefficient vehicle movement.' },
+                            { t: 'Lack of Intelligent Signal Control', d: 'Traditional traffic lights use fixed timers and do not respond to actual road conditions.' },
+                            { t: 'Emergency Vehicle Delays', d: 'The proposed methodology utilizes a multimodal fusion framework, combining YAMNet for acoustic siren detection, YOLOv8 for visual vehicle classification, and OCR for text verification. A weighted decision logic triggers an immediate emergency traffic signal preemption.' },
+                            { t: 'Poor Traffic Coordination', d: 'Nearby intersections do not communicate effectively, leading to unbalanced traffic flow and bottlenecks.' }
+                        ].map((item, idx) => (
+                            <div key={idx} className="bg-surface-custom/50 p-4 rounded-xl border border-surface-border">
+                                <h4 className="text-secondary-custom font-bold mb-1 text-base">{item.t}</h4>
+                                <p className="text-text-dim text-sm leading-snug">{item.d}</p>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+            )
         }
     ];
 
@@ -59,7 +76,6 @@ const ResearchDomain = () => {
         { logo: 'https://github.githubassets.com/pinned-octocat.svg', name: 'GitHub Actions', desc: 'Automation workflows for building, testing, deploying' },
         { logo: 'https://static.vecteezy.com/system/resources/previews/048/312/672/original/ocr-icon-black-line-art-logo-vector.jpg', name: 'Paddle OCR', desc: 'Text extraction from scanned content & images' },
         { logo: 'https://tse4.mm.bing.net/th/id/OIP.-OXpqRQ0N9q-Mjvv847n5wAAAA?rs=1&pid=ImgDetMain&o=7&rm=3', name: 'Arduino Mega', desc: 'Detected inputs to Arduino board for signal control via pyfirmata' },
-
     ];
 
     return (
