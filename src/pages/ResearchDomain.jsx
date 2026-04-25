@@ -44,13 +44,13 @@ const ResearchDomain = () => {
             title: 'Methodology',
             content: (
                 <div className="space-y-6">
-                    <p>Current research lacks a unified framework integrating real-time computer vision with decentralized MARL. Crucially, existing methods fail to simultaneously optimize emergency vehicle preemption, public transit priority, and adaptive pedestrian safety across coordinated multi-intersection urban traffic networks.This stems from four major issues:</p>
+                    <p>Current research lacks a unified framework integrating real-time computer vision with decentralized MARL.This stems from four major issues:</p>
                     <div className="grid sm:grid-cols-2 gap-6 mt-4">
                         {[
-                            { t: 'Traffic Congestion', d: 'Current traffic systems cannot adapt in real time, causing long delays and inefficient vehicle movement.' },
-                            { t: 'Lack of Intelligent Signal Control', d: 'Traditional traffic lights use fixed timers and do not respond to actual road conditions.' },
-                            { t: 'Emergency Vehicle Delays', d: 'The proposed methodology utilizes a multimodal fusion framework, combining YAMNet for acoustic siren detection, YOLOv8 for visual vehicle classification, and OCR for text verification. A weighted decision logic triggers an immediate emergency traffic signal preemption.' },
-                            { t: 'Poor Traffic Coordination', d: 'Nearby intersections do not communicate effectively, leading to unbalanced traffic flow and bottlenecks.' }
+{ t: 'Centralized Training and Decentralized Execution through VDN', d: 'Using a CTDE paradigm in SUMO, DQN-based agents process multimodal inputs. Value Decomposition Networks (VDN) factorize global Q-values, enabling independent junctions to learn cooperative signal policies balancing throughput and safety.' },
+{ t: 'Vehicle and Accident Detection Methodology', d: 'YOLOv11 processes camera frames for real-time vehicle classification. Detections are spatially aggregated at lane and junction levels to compute congestion metrics, which map directly into the MARL state vector.' },
+{ t: 'Emergency Vehicle Detection Methodology', d: 'Multimodal fusion combines YOLOv8 vision, HSV siren light detection, YAMNet audio classification, and EasyOCR. This redundant cross-modal validation ensures reliable emergency identification for autonomous signal preemption under adverse conditions.' },
+{ t: 'Pedestrian Detection Methodology', d: 'Pedestrians are classified by vulnerability (e.g., Elder, Mobility-Impaired). A change-detection persistence mechanism filters redundant static detections, injecting only dynamic crossing demands into the MARL state to adapt signal phases.' }
                         ].map((item, idx) => (
                             <div key={idx} className="bg-surface-custom/50 p-4 rounded-xl border border-surface-border">
                                 <h4 className="text-secondary-custom font-bold mb-1 text-base">{item.t}</h4>

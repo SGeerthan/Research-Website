@@ -4,7 +4,11 @@ import luvinson from "../images/luvinson.jpg";
 import nimasha from "../images/Nimasha.jpg";
 import sir from "../images/NuwanSir.png";
 import sangs from "../images/Sangs.jpg";
-
+import doc from "../images/doc.png";
+import ppt from "../images/ppt.png";
+import pdf from "../images/pdf.png";
+import download from "../images/download.png";
+import comingSoon from "../images/coming-soon.png";
 
 const images = {
   maam,
@@ -12,7 +16,12 @@ const images = {
   luvinson,
   nimasha,
   sir,
-  sangs
+  sangs,
+  doc,
+  ppt,
+  pdf,
+  download,
+  comingSoon
 };
 
 export default images;

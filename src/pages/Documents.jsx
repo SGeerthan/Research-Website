@@ -1,48 +1,184 @@
 import React from 'react';
+import images from '../assets/images/file';
 
-const documents = [
-    { id: 1, name: 'Project Proposal', type: 'PDF', size: '1.2 MB', link: '#', category: 'Planning', description: 'Initial proposal outlining project goals and scope.' },
-    { id: 2, name: 'Technical Architecture', type: 'PPT', size: '2.5 MB', link: '#', category: 'Design', description: 'Presentation on system architecture and component interactions.' },
-    { id: 3, name: 'Research Paper Baseline', type: 'PDF', size: '4.8 MB', link: '#', category: 'Research', description: 'Literature review of existing traffic management solutions.' },
-    { id: 4, name: 'Interim Progress Report', type: 'PDF', size: '0.9 MB', link: '#', category: 'Progress', description: 'Status update on development and data acquisition phases.' },
+// Documents organized by category
+const documentCategories = [
+    {
+        category: 'Documents',
+        icon: images.pdf,
+        items: [
+            {
+                id: 1,
+                name: 'Project Proposal',
+                type: 'PDF',
+                description: 'Initial proposal outlining project goals, scope, and implementation strategy.',
+                link: '/src/assets/individualdoc/sangs/proposalreport/IT22346568_Proposal_Report_Draft.pdf'
+            },
+            {
+                id: 2,
+                name: 'Checklist I',
+                type: 'PDF',
+                description: 'First checkpoint checklist for project progress evaluation.',
+                link: '/src/assets/commondoc/checklist/cc1/25-26J-473_CheckList1.pdf'
+            },
+            {
+                id: 3,
+                name: 'Research Paper',
+                type: 'PDF',
+                description: 'Comprehensive research paper on traffic flow optimization using multi-agent reinforcement learning.',
+                link: '#'
+            },
+            {
+                id: 4,
+                name: 'Final Report',
+                type: 'PDF',
+                description: 'Complete final project report with findings, results, and conclusions.',
+                link: '#'
+            }
+        ]
+    },
+    {
+        category: 'Presentations (Slides)',
+        icon: images.ppt,
+        items: [
+            {
+                id: 5,
+                name: 'Proposal Slides',
+                type: 'PPTX',
+                description: 'Initial proposal presentation slides covering project objectives and architecture.',
+                link: '/src/assets/commondoc/ppt/proposal/Smart Traffic Flow Optimization with Multi Agent Reinforcement Learning (1).pptx'
+            },
+            {
+                id: 6,
+                name: 'Progress Presentation I',
+                type: 'PPTX',
+                description: 'First progress presentation showing development milestones and achievements.',
+                link: '/src/assets/commondoc/ppt/pp1/PP1 of Smart Traffic Flow Optimization with Multi Agent Reinforcement Learning.pptx'
+            },
+            {
+                id: 7,
+                name: 'Progress Presentation II',
+                type: 'PPTX',
+                description: 'Second progress presentation with updated results and implementation details.',
+                link: '/src/assets/commondoc/ppt/pp2/PP2 of Smart Traffic Flow Optimization with Multi Agent Reinforcement Learning.pptx'
+            },
+            {
+                id: 8,
+                name: 'Final Presentation',
+                type: 'PPTX',
+                description: 'Final presentation slides with complete results and project outcomes.',
+                link: '#'
+            }
+        ]
+    }
 ];
+
+const DocumentCard = ({ doc }) => {
+
+    // Color based on type
+    const getTypeColor = () => {
+        if (doc.type === 'PDF') return 'bg-red-500/20 text-red-400';
+        if (doc.type === 'PPTX') return 'bg-orange-500/20 text-orange-400';
+        return 'bg-blue-500/20 text-blue-400';
+    };
+
+    // ICON based on type (IMAGE)
+    const getTypeIcon = () => {
+        if (doc.type === 'PDF') return images.pdf;
+        if (doc.type === 'PPTX') return images.ppt;
+        return images.doc;
+    };
+
+    const isAvailable = doc.link !== '#';
+
+    return (
+        <div className="glass-card group hover:border-primary-custom/50 transition-all duration-300 p-6 flex flex-col h-full">
+
+            {/* ICON + TYPE */}
+            <div className="flex items-start justify-between mb-4">
+                
+                <div className={`w-12 h-12 rounded-lg flex items-center justify-center ${getTypeColor()} border border-white/10 p-2`}>
+                    <img
+                        src={getTypeIcon()}
+                        alt={doc.type}
+                        className="w-full h-full object-contain group-hover:scale-110 transition-transform duration-300"
+                    />
+                </div>
+
+                <span className={`text-xs font-bold px-2 py-1 rounded-full ${getTypeColor()} border border-white/10`}>
+                    {doc.type}
+                </span>
+            </div>
+
+            {/* TITLE */}
+            <h3 className="text-lg font-bold mb-2 group-hover:text-primary-custom transition-colors">
+                {doc.name}
+            </h3>
+
+            {/* DESCRIPTION */}
+            <p className="text-text-dim text-sm mb-6 leading-relaxed grow">
+                {doc.description}
+            </p>
+
+            {/* ACTION */}
+            {isAvailable ? (
+                <a
+                    href={doc.link}
+                    download
+                    className="inline-flex items-center gap-2 text-sm font-bold text-primary-custom hover:gap-3 transition-all duration-300"
+                >
+                    <img src={images.download} alt="download" className="w-5 h-5" />
+                    Download
+                </a>
+            ) : (
+                <span className="inline-flex items-center gap-2 text-sm font-bold text-text-dim opacity-50">
+                    <img src={images.comingSoon} alt="coming soon" className="w-5 h-5" />
+                    Coming Soon
+                </span>
+            )}
+        </div>
+    );
+};
 
 const Documents = () => {
     return (
-        <div className="section-padding">
+        <div className="section-padding bg-bg-custom min-h-screen">
             <div className="max-w-7xl mx-auto">
-                <header className="text-center mb-16">
-                    <h2 className="text-4xl md:text-5xl mb-4">
-                        Project <span className="text-gradient">Documents</span>
-                    </h2>
-                    <p className="text-text-dim text-lg">Access all technical presentations, research papers, and reports.</p>
-                </header>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
-                    {documents.map((doc) => (
-                        <div key={doc.id} className="glass-card group hover:border-primary-custom/50 transition-all duration-300 p-8 flex gap-6">
-                            <div className="flex-shrink-0 w-16 h-16 rounded-xl bg-white/5 flex items-center justify-center relative">
-                                <span className="text-3xl">{doc.type === 'PDF' ? '📄' : '📊'}</span>
-                                <span className="absolute -bottom-1 -right-1 bg-surface-border text-[9px] font-black px-1.5 py-0.5 rounded border border-glass-border">
-                                    {doc.type}
-                                </span>
+                <div className="space-y-16">
+                    {documentCategories.map((categoryGroup, idx) => (
+                        <div key={idx} className="space-y-6">
+
+                            {/* CATEGORY HEADER */}
+                            <div className="flex items-center gap-3 mb-8">
+
+                                <img
+                                    src={categoryGroup.icon}
+                                    alt="category icon"
+                                    className="w-10 h-10"
+                                />
+
+                                <div className="flex-1 h-1 bg-gradient-to-r from-primary-custom/50 via-amber/50 to-transparent rounded-full"></div>
+
+                                <h2 className="text-2xl font-bold text-gradient">
+                                    {categoryGroup.category}
+                                </h2>
                             </div>
-                            <div className="flex-1">
-                                <div className="flex justify-between items-start mb-2">
-                                    <span className="text-[10px] uppercase font-bold tracking-widest text-primary-custom">{doc.category}</span>
-                                    <span className="text-[10px] text-text-dim font-bold">{doc.size}</span>
-                                </div>
-                                <h3 className="text-xl mb-3 group-hover:text-primary-custom transition-colors">{doc.name}</h3>
-                                <p className="text-text-dim text-sm mb-6 leading-relaxed line-clamp-2">{doc.description}</p>
-                                <a href={doc.link} className="inline-flex items-center gap-2 text-sm font-bold text-primary-custom hover:gap-3 transition-all duration-300">
-                                    Download <span className="text-lg">→</span>
-                                </a>
+
+                            {/* GRID */}
+                            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6">
+                                {categoryGroup.items.map((doc) => (
+                                    <DocumentCard
+                                        key={doc.id}
+                                        doc={doc}
+                                    />
+                                ))}
                             </div>
+
                         </div>
                     ))}
                 </div>
 
-               
             </div>
         </div>
     );
