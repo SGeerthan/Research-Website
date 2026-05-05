@@ -80,7 +80,7 @@ const Home = () => {
         <div className="max-w-7xl mx-auto">
           <header className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl mb-4">
-              About <span className="text-gradient">Traffiion</span>
+              About <span className="text-gradient">Traffixion</span>
             </h2>
             <p className="text-text-dim text-lg">
               Traffixion is an intelligent traffic management system that uses

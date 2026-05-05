@@ -4,69 +4,147 @@ import images from '../assets/images/file';
 // Documents organized by category
 const documentCategories = [
     {
-        category: 'Documents',
+        category: 'Proposal Reports',
         icon: images.pdf,
         items: [
             {
                 id: 1,
-                name: 'Project Proposal',
+                name: 'Proposal Report - IT22323316 (Luvinson I)',
                 type: 'PDF',
-                description: 'Initial proposal outlining project goals, scope, and implementation strategy.',
-                link: '/src/assets/individualdoc/sangs/proposalreport/IT22346568_Proposal_Report_Draft.pdf'
+                description: 'Individual proposal report submitted by Luvinson I.',
+                link: '/src/assets/individualdoc/luvinson/proposal/IT22323316_Proposal_Report.pdf'
             },
             {
                 id: 2,
+                name: 'Proposal Report - IT22346568 (Sangeerthan S)',
+                type: 'PDF',
+                description: 'Individual proposal report submitted by Sangeerthan S.',
+                link: '/src/assets/individualdoc/sangeerthan/proposal/IT22346568_Proposal_Report_Draft.pdf'
+            },
+            {
+                id: 3,
+                name: 'Proposal Report - IT22000576 (Fernandopulle S N)',
+                type: 'PDF',
+                description: 'Individual proposal report submitted by Fernandopulle S N.',
+                link: '/src/assets/individualdoc/fernandopulle/proposal/IT22000576_Proposal_Report.pdf'
+            },
+            {
+                id: 4,
+                name: 'Proposal Report - IT22920218 (Krushanth A)',
+                type: 'PDF',
+                description: 'Individual proposal report submitted by Krushanth A.',
+                link: '/src/assets/individualdoc/krushanth/proposal/IT22920218_Proposal_Report.pdf'
+            }
+        ]
+    },
+
+    {
+        category: 'Thesis Reports',
+        icon: images.pdf,
+        items: [
+            {
+                id: 5,
+                name: 'Thesis Report - IT22323316 (Luvinson I)',
+                type: 'PDF',
+                description: 'Final thesis report submitted by Luvinson I.',
+                link: '/src/assets/individualdoc/luvinson/thesis/IT22323316_Thesis_Report_Draft.pdf'
+            },
+            {
+                id: 6,
+                name: 'Thesis Report - IT22346568 (Sangeerthan S)',
+                type: 'PDF',
+                description: 'Final thesis report submitted by Sangeerthan S.',
+                link: '/src/assets/individualdoc/sangeerthan/thesis/IT22346568_Thesis_Report_Draft.pdf'
+            },
+            {
+                id: 7,
+                name: 'Thesis Report - IT22000576 (Fernandopulle S N)',
+                type: 'PDF',
+                description: 'Final thesis report submitted by Fernandopulle S N.',
+                link: '/src/assets/individualdoc/fernandopulle/thesis/IT22000576_Thesis_Report_Draft.pdf'
+            },
+            {
+                id: 8,
+                name: 'Thesis Report - IT22920218 (Krushanth A)',
+                type: 'PDF',
+                description: 'Final thesis report submitted by Krushanth A.',
+                link: '/src/assets/individualdoc/krushanth/thesis/IT22920218_Thesis_Report_Draft.pdf'
+            }
+        ]
+    },
+
+    {
+        category: 'Documents',
+        icon: images.pdf,
+        items: [
+             {
+                id: 9,
+                name: 'Project Registration Report',
+                type: 'PDF',
+                description: 'Project Details and Components based document for project registration.',
+                link: '/src/assets/commondoc/taf/signed-TAF_25-26J-473.pdf'
+            },
+            {
+                id: 10,
                 name: 'Checklist I',
                 type: 'PDF',
                 description: 'First checkpoint checklist for project progress evaluation.',
                 link: '/src/assets/commondoc/checklist/cc1/25-26J-473_CheckList1.pdf'
             },
+             {
+                id: 11,
+                name: 'Checklist II',
+                type: 'PDF',
+                description: 'Second checkpoint checklist for project progress evaluation.',
+                link: '/src/assets/commondoc/checklist/cc1/25-26J-473_CheckList2.pdf'
+            },
             {
-                id: 3,
+                id: 12,
                 name: 'Research Paper',
                 type: 'PDF',
-                description: 'Comprehensive research paper on traffic flow optimization using multi-agent reinforcement learning.',
+                description: 'Research paper on traffic flow optimization using multi-agent reinforcement learning.',
                 link: '#'
             },
             {
-                id: 4,
+                id: 13,
                 name: 'Final Report',
                 type: 'PDF',
-                description: 'Complete final project report with findings, results, and conclusions.',
+                description: 'Complete final project report with findings and conclusions.',
                 link: '#'
             }
         ]
     },
+
     {
         category: 'Presentations (Slides)',
         icon: images.ppt,
         items: [
             {
-                id: 5,
+                id: 14,
                 name: 'Proposal Slides',
                 type: 'PPTX',
-                description: 'Initial proposal presentation slides covering project objectives and architecture.',
-                link: '/src/assets/commondoc/ppt/proposal/Smart Traffic Flow Optimization with Multi Agent Reinforcement Learning (1).pptx'
+                description: 'Initial proposal presentation slides.',
+                link: '/src/assets/commondoc/ppt/proposal/Smart Traffic Flow Optimization.pptx'
             },
             {
-                id: 6,
+                id: 15,
                 name: 'Progress Presentation I',
                 type: 'PPTX',
-                description: 'First progress presentation showing development milestones and achievements.',
-                link: '/src/assets/commondoc/ppt/pp1/PP1 of Smart Traffic Flow Optimization with Multi Agent Reinforcement Learning.pptx'
+                description: 'First progress presentation.',
+                link: '/src/assets/commondoc/ppt/pp1/PP1.pptx'
             },
             {
-                id: 7,
+                id: 16,
                 name: 'Progress Presentation II',
                 type: 'PPTX',
-                description: 'Second progress presentation with updated results and implementation details.',
-                link: '/src/assets/commondoc/ppt/pp2/PP2 of Smart Traffic Flow Optimization with Multi Agent Reinforcement Learning.pptx'
+                description: 'Second progress presentation.',
+                link: '/src/assets/commondoc/ppt/pp2/PP2.pptx'
             },
             {
-                id: 8,
+                id: 17,
                 name: 'Final Presentation',
                 type: 'PPTX',
-                description: 'Final presentation slides with complete results and project outcomes.',
+                description: 'Final presentation slides.',
                 link: '#'
             }
         ]
@@ -75,14 +153,12 @@ const documentCategories = [
 
 const DocumentCard = ({ doc }) => {
 
-    // Color based on type
     const getTypeColor = () => {
         if (doc.type === 'PDF') return 'bg-red-500/20 text-red-400';
         if (doc.type === 'PPTX') return 'bg-orange-500/20 text-orange-400';
         return 'bg-blue-500/20 text-blue-400';
     };
 
-    // ICON based on type (IMAGE)
     const getTypeIcon = () => {
         if (doc.type === 'PDF') return images.pdf;
         if (doc.type === 'PPTX') return images.ppt;
@@ -92,47 +168,36 @@ const DocumentCard = ({ doc }) => {
     const isAvailable = doc.link !== '#';
 
     return (
-        <div className="glass-card group hover:border-primary-custom/50 transition-all duration-300 p-6 flex flex-col h-full">
+        <div className="glass-card group p-6 flex flex-col h-full">
 
-            {/* ICON + TYPE */}
-            <div className="flex items-start justify-between mb-4">
-                
-                <div className={`w-12 h-12 rounded-lg flex items-center justify-center ${getTypeColor()} border border-white/10 p-2`}>
-                    <img
-                        src={getTypeIcon()}
-                        alt={doc.type}
-                        className="w-full h-full object-contain group-hover:scale-110 transition-transform duration-300"
-                    />
+            <div className="flex justify-between mb-4">
+                <div className="w-12 h-12">
+                    <img src={getTypeIcon()} alt="doc" />
                 </div>
 
-                <span className={`text-xs font-bold px-2 py-1 rounded-full ${getTypeColor()} border border-white/10`}>
+                <span className={`text-xs px-2 py-1 rounded ${getTypeColor()}`}>
                     {doc.type}
                 </span>
             </div>
 
-            {/* TITLE */}
-            <h3 className="text-lg font-bold mb-2 group-hover:text-primary-custom transition-colors">
-                {doc.name}
-            </h3>
+            <h3 className="text-lg font-bold mb-2">{doc.name}</h3>
 
-            {/* DESCRIPTION */}
-            <p className="text-text-dim text-sm mb-6 leading-relaxed grow">
+            <p className="text-sm text-text-dim mb-6 flex-grow">
                 {doc.description}
             </p>
 
-            {/* ACTION */}
             {isAvailable ? (
                 <a
                     href={doc.link}
                     download
-                    className="inline-flex items-center gap-2 text-sm font-bold text-primary-custom hover:gap-3 transition-all duration-300"
+                    className="text-primary-custom font-bold flex items-center gap-2"
                 >
-                    <img src={images.download} alt="download" className="w-5 h-5" />
+                    <img src={images.download} className="w-5 h-5" />
                     Download
                 </a>
             ) : (
-                <span className="inline-flex items-center gap-2 text-sm font-bold text-text-dim opacity-50">
-                    <img src={images.comingSoon} alt="coming soon" className="w-5 h-5" />
+                <span className="text-text-dim opacity-50 flex items-center gap-2">
+                    <img src={images.comingSoon} className="w-5 h-5" />
                     Coming Soon
                 </span>
             )}
@@ -142,42 +207,27 @@ const DocumentCard = ({ doc }) => {
 
 const Documents = () => {
     return (
-        <div className="section-padding bg-bg-custom min-h-screen">
-            <div className="max-w-7xl mx-auto">
+        <div className="section-padding min-h-screen bg-bg-custom">
+            <div className="max-w-7xl mx-auto space-y-16">
 
-                <div className="space-y-16">
-                    {documentCategories.map((categoryGroup, idx) => (
-                        <div key={idx} className="space-y-6">
+                {documentCategories.map((group, idx) => (
+                    <div key={idx}>
 
-                            {/* CATEGORY HEADER */}
-                            <div className="flex items-center gap-3 mb-8">
-
-                                <img
-                                    src={categoryGroup.icon}
-                                    alt="category icon"
-                                    className="w-10 h-10"
-                                />
-
-                                <div className="flex-1 h-1 bg-gradient-to-r from-primary-custom/50 via-amber/50 to-transparent rounded-full"></div>
-
-                                <h2 className="text-2xl font-bold text-gradient">
-                                    {categoryGroup.category}
-                                </h2>
-                            </div>
-
-                            {/* GRID */}
-                            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6">
-                                {categoryGroup.items.map((doc) => (
-                                    <DocumentCard
-                                        key={doc.id}
-                                        doc={doc}
-                                    />
-                                ))}
-                            </div>
-
+                        <div className="flex items-center gap-4 mb-8">
+                            <img src={group.icon} className="w-10 h-10" />
+                            <h2 className="text-2xl font-bold text-gradient">
+                                {group.category}
+                            </h2>
                         </div>
-                    ))}
-                </div>
+
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            {group.items.map(doc => (
+                                <DocumentCard key={doc.id} doc={doc} />
+                            ))}
+                        </div>
+
+                    </div>
+                ))}
 
             </div>
         </div>

@@ -7,6 +7,7 @@ import ResearchDomain from './pages/ResearchDomain';
 import Progress from './pages/Progress';
 import Documents from './pages/Documents';
 import Team from './pages/Team';
+import References from './pages/Reference';
 
 function App() {
   return (
@@ -30,6 +31,9 @@ function App() {
         </section>
           <section id="contact-us">
              <ContactUs />
+          </section>
+          <section id="references">
+             <References />
           </section>
       </main>
       <Footer />
