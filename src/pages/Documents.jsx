@@ -12,28 +12,28 @@ const documentCategories = [
                 name: 'Proposal Report - IT22323316 (Luvinson I)',
                 type: 'PDF',
                 description: 'Individual proposal report submitted by Luvinson I.',
-                link: '/src/assets/individualdoc/luvinson/proposal/IT22323316_Proposal_Report.pdf'
+                link: '/documents/individualdoc/luvinson/proposalreport/IT22323316_Proposal_Report_Draft.pdf'
             },
             {
                 id: 2,
                 name: 'Proposal Report - IT22346568 (Sangeerthan S)',
                 type: 'PDF',
                 description: 'Individual proposal report submitted by Sangeerthan S.',
-                link: '/src/assets/individualdoc/sangeerthan/proposal/IT22346568_Proposal_Report_Draft.pdf'
+                link: '/documents/individualdoc/sangs/proposalreport/IT22346568_Proposal_Report_Draft.pdf'
             },
             {
                 id: 3,
                 name: 'Proposal Report - IT22000576 (Fernandopulle S N)',
                 type: 'PDF',
                 description: 'Individual proposal report submitted by Fernandopulle S N.',
-                link: '/src/assets/individualdoc/fernandopulle/proposal/IT22000576_Proposal_Report.pdf'
+                link: '/documents/individualdoc/nimasha/proposalreport/IT22000576_Proposal_Report_Draft.pdf'
             },
             {
                 id: 4,
                 name: 'Proposal Report - IT22920218 (Krushanth A)',
                 type: 'PDF',
                 description: 'Individual proposal report submitted by Krushanth A.',
-                link: '/src/assets/individualdoc/krushanth/proposal/IT22920218_Proposal_Report.pdf'
+                link: '/documents/individualdoc/krushanth/proposalreport/IT22920218_Proposal_Report_Draft.pdf'
             }
         ]
     },
@@ -47,28 +47,28 @@ const documentCategories = [
                 name: 'Thesis Report - IT22323316 (Luvinson I)',
                 type: 'PDF',
                 description: 'Final thesis report submitted by Luvinson I.',
-                link: '/src/assets/individualdoc/luvinson/thesis/IT22323316_Thesis_Report_Draft.pdf'
+                link: '/documents/individualdoc/luvinson/thesis/IT22323316_Thesis_Report_Draft.pdf'
             },
             {
                 id: 6,
                 name: 'Thesis Report - IT22346568 (Sangeerthan S)',
                 type: 'PDF',
                 description: 'Final thesis report submitted by Sangeerthan S.',
-                link: '/src/assets/individualdoc/sangeerthan/thesis/IT22346568_Thesis_Report_Draft.pdf'
+                link: '/documents/individualdoc/sangs/thesis/IT22346568_Thesis_Report_Draft.pdf'
             },
             {
                 id: 7,
                 name: 'Thesis Report - IT22000576 (Fernandopulle S N)',
                 type: 'PDF',
                 description: 'Final thesis report submitted by Fernandopulle S N.',
-                link: '/src/assets/individualdoc/fernandopulle/thesis/IT22000576_Thesis_Report_Draft.pdf'
+                link: '/documents/individualdoc/nimasha/thesis/IT22000576_Thesis_Report_Draft.pdf'
             },
             {
                 id: 8,
                 name: 'Thesis Report - IT22920218 (Krushanth A)',
                 type: 'PDF',
                 description: 'Final thesis report submitted by Krushanth A.',
-                link: '/src/assets/individualdoc/krushanth/thesis/IT22920218_Thesis_Report_Draft.pdf'
+                link: '/documents/individualdoc/krushanth/thesis/IT22920218_Thesis_Report_Draft.pdf'
             }
         ]
     },
@@ -77,26 +77,26 @@ const documentCategories = [
         category: 'Documents',
         icon: images.pdf,
         items: [
-             {
+            {
                 id: 9,
                 name: 'Project Registration Report',
                 type: 'PDF',
                 description: 'Project Details and Components based document for project registration.',
-                link: '/src/assets/commondoc/taf/signed-TAF_25-26J-473.pdf'
+                link: '/documents/commondoc/taf/signed-TAF_25-26J-473.pdf'
             },
             {
                 id: 10,
                 name: 'Checklist I',
                 type: 'PDF',
                 description: 'First checkpoint checklist for project progress evaluation.',
-                link: '/src/assets/commondoc/checklist/cc1/25-26J-473_CheckList1.pdf'
+                link: '/documents/commondoc/checklist/cc1/25-26J-473_CheckList1.pdf'
             },
-             {
+            {
                 id: 11,
                 name: 'Checklist II',
                 type: 'PDF',
                 description: 'Second checkpoint checklist for project progress evaluation.',
-                link: '/src/assets/commondoc/checklist/cc1/25-26J-473_CheckList2.pdf'
+                link: '/documents/commondoc/checklist/cc3/25_26J_473_Check_List_2_Deployment_Report.pdf'
             },
             {
                 id: 12,
@@ -124,21 +124,21 @@ const documentCategories = [
                 name: 'Proposal Slides',
                 type: 'PPTX',
                 description: 'Initial proposal presentation slides.',
-                link: '/src/assets/commondoc/ppt/proposal/Smart Traffic Flow Optimization.pptx'
+                link: '/documents/commondoc/ppt/proposal/Smart_Traffic_Flow_Optimization_with_Multi_Agent_Reinforcement_Learning.pptx'
             },
             {
                 id: 15,
                 name: 'Progress Presentation I',
                 type: 'PPTX',
                 description: 'First progress presentation.',
-                link: '/src/assets/commondoc/ppt/pp1/PP1.pptx'
+                link: '/documents/commondoc/ppt/pp1/PP1.pptx'
             },
             {
                 id: 16,
                 name: 'Progress Presentation II',
                 type: 'PPTX',
                 description: 'Second progress presentation.',
-                link: '/src/assets/commondoc/ppt/pp2/PP2.pptx'
+                link: '/documents/commondoc/ppt/pp2/PP2.pptx'
             },
             {
                 id: 17,
@@ -189,7 +189,9 @@ const DocumentCard = ({ doc }) => {
             {isAvailable ? (
                 <a
                     href={doc.link}
-                    download
+                    download={doc.name}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="text-primary-custom font-bold flex items-center gap-2"
                 >
                     <img src={images.download} className="w-5 h-5" />
