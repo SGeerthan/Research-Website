@@ -6,15 +6,11 @@ const Home = () => {
       <div className="section-padding">
         <div className="max-w-7xl mx-auto">
           {/* ABOUT SECTION */}
-          <header className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl mb-4">References</h2>
+          <header className="text-center mb-16 mt-20">
+            <h2 className="text-4xl md:text-5xl mb-4 text-gradient">References</h2>
           </header>
-          {/* REFERENCES SECTION */}
+      
           <section className="mt-20">
-            <h3 className="text-3xl font-bold mb-6 text-center text-gradient">
-              References
-            </h3>
-
             <div className="glass-card p-6 md:p-10 space-y-5">
               <p className="text-text-dim">
                 [1] United Nations, World Urbanization Prospects: The 2022
