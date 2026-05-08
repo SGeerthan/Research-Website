@@ -53,11 +53,7 @@ const Navbar = () => {
                             </a>
                         </li>
                     ))}
-                    <li>
-                        <a href="#progress" className="glow-btn text-sm py-2 px-5">
-                            View Progress →
-                        </a>
-                    </li>
+                   
                 </ul>
 
                 {/* Mobile Hamburger */}

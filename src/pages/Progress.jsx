@@ -14,10 +14,10 @@ const progressEvents = [
     { date: 'Apr 2026', title: 'Final reports', status: 'in-progress' },
     { date: 'Mar 2026', title: 'Progress Presentation - II', status: 'completed' },
     { date: 'Mar 2026', title: 'Check List II', status: 'completed' },
-    { date: 'June 2026', title: 'Submission of RP- Acceptance', status: 'upcoming' },
-    { date: 'May 2026', title: 'Final presentation & VIVA', status: 'upcoming' },
-    { date: 'June 2026', title: 'Project website', status: 'upcoming' },
-    { date: 'June 2026', title: 'Research logbook', status: 'upcoming' },
+    { date: 'May 2026', title: 'Final presentation & VIVA', status: 'in-progress' },
+    { date: 'May 2026', title: 'Project website', status: 'in-progress' },
+    { date: 'May 2026', title: 'Research logbook', status: 'completed' },
+     { date: 'June 2026', title: 'Submission of RP- Acceptance', status: 'upcoming' },
 ];
 
 const Progress = () => {
