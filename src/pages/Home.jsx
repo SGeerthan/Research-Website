@@ -9,9 +9,9 @@ const Home = () => {
       <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
         <div className="space-y-8">
           <h1 className="text-5xl md:text-7xl leading-tight">
-            Smarter signals. Faster response.
+            Smarter Traffic Optimization,
             <br />
-            <span className="text-gradient">Safer roads.</span>
+            <span className="text-gradient">with MARL Agents.</span>
           </h1>
           <p className="text-xl text-text-dim max-w-lg leading-relaxed">
             Building the future of smart cities with adaptive traffic
